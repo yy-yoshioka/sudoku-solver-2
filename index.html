@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>sudoku solver</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box-block">
+        <div class="box-1">
+          <div class="row-1">
+            <div class="col-1" id="X11"><span></span></div>
+            <div class="col-2" id="X12"><span></span></div>
+            <div class="col-3" id="X13"><span></span></div>
+          </div>
+          <div class="row-2">
+            <div class="col-1" id="X21"><span>4</span></div>
+            <div class="col-2" id="X22"><span></span></div>
+            <div class="col-3" id="X23"><span></span></div>
+          </div>
+          <div class="row-3">
+            <div class="col-1" id="X31"><span></span></div>
+            <div class="col-2" id="X32"><span>1</span></div>
+            <div class="col-3" id="X33"><span></span></div>
+          </div>
+        </div>
+        <div class="box-2">
+          <div class="row-4">
+            <div class="col-1" id="X41"><span>8</span></div>
+            <div class="col-2" id="X42"><span></span></div>
+            <div class="col-3" id="X43"><span>5</span></div>
+          </div>
+          <div class="row-5">
+            <div class="col-1" id="X51"><span></span></div>
+            <div class="col-2" id="X52"><span></span></div>
+            <div class="col-3" id="X53"><span>1</span></div>
+          </div>
+          <div class="row-6">
+            <div class="col-1" id="X61"><span>2</span></div>
+            <div class="col-2" id="X62"><span></span></div>
+            <div class="col-3" id="X63"><span></span></div>
+          </div>
+        </div>
+        <div class="box-3">
+          <div class="row-7">
+            <div class="col-1" id="X71"><span></span></div>
+            <div class="col-2" id="X72"><span></span></div>
+            <div class="col-3" id="X73"><span></span></div>
+          </div>
+          <div class="row-8">
+            <div class="col-1" id="X81"><span>3</span></div>
+            <div class="col-2" id="X82"><span>7</span></div>
+            <div class="col-3" id="X83"><span>4</span></div>
+          </div>
+          <div class="row-9">
+            <div class="col-1" id="X91"><span></span></div>
+            <div class="col-2" id="X92"><span></span></div>
+            <div class="col-3" id="X93"><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="box-block">
+        <div class="box-4">
+          <div class="row-1">
+            <div class="col-4" id="X14"><span></span></div>
+            <div class="col-5" id="X15"><span></span></div>
+            <div class="col-6" id="X16"><span>7</span></div>
+          </div>
+          <div class="row-2">
+            <div class="col-4" id="X24"><span></span></div>
+            <div class="col-5" id="X25"><span></span></div>
+            <div class="col-6" id="X26"><span></span></div>
+          </div>
+          <div class="row-3">
+            <div class="col-4" id="X34"><span></span></div>
+            <div class="col-5" id="X35"><span></span></div>
+            <div class="col-6" id="X36"><span></span></div>
+          </div>
+        </div>
+        <div class="box-5">
+          <div class="row-4">
+            <div class="col-4" id="X44"><span></span></div>
+            <div class="col-5" id="X45"><span>9</span></div>
+            <div class="col-6" id="X46"><span></span></div>
+          </div>
+          <div class="row-5">
+            <div class="col-4" id="X54"><span>4</span></div>
+            <div class="col-5" id="X55"><span></span></div>
+            <div class="col-6" id="X56"><span>5</span></div>
+          </div>
+          <div class="row-6">
+            <div class="col-4" id="X64"><span>7</span></div>
+            <div class="col-5" id="X65"><span></span></div>
+            <div class="col-6" id="X66"><span></span></div>
+          </div>
+        </div>
+        <div class="box-6">
+          <div class="row-7">
+            <div class="col-4" id="X74"><span>5</span></div>
+            <div class="col-5" id="X75"><span></span></div>
+            <div class="col-6" id="X76"><span></span></div>
+          </div>
+          <div class="row-8">
+            <div class="col-4" id="X84"><span></span></div>
+            <div class="col-5" id="X85"><span>8</span></div>
+            <div class="col-6" id="X86"><span></span></div>
+          </div>
+          <div class="row-9">
+            <div class="col-4" id="X94"><span>6</span></div>
+            <div class="col-5" id="X95"><span></span></div>
+            <div class="col-6" id="X96"><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="box-block">
+        <div class="box-7">
+          <div class="row-1">
+            <div class="col-7" id="X17"><span>2</span></div>
+            <div class="col-8" id="X18"><span>3</span></div>
+            <div class="col-9" id="X19"><span></span></div>
+          </div>
+          <div class="row-2">
+            <div class="col-7" id="X27"><span>8</span></div>
+            <div class="col-8" id="X28"><span></span></div>
+            <div class="col-9" id="X29"><span></span></div>
+          </div>
+          <div class="row-3">
+            <div class="col-7" id="X37"><span></span></div>
+            <div class="col-8" id="X38"><span></span></div>
+            <div class="col-9" id="X39"><span></span></div>
+          </div>
+        </div>
+        <div class="box-8">
+          <div class="row-4">
+            <div class="col-7" id="X47"><span></span></div>
+            <div class="col-8" id="X48"><span></span></div>
+            <div class="col-9" id="X49"><span>4</span></div>
+          </div>
+          <div class="row-5">
+            <div class="col-7" id="X57"><span></span></div>
+            <div class="col-8" id="X58"><span></span></div>
+            <div class="col-9" id="X59"><span>6</span></div>
+          </div>
+          <div class="row-6">
+            <div class="col-7" id="X67"><span></span></div>
+            <div class="col-8" id="X68"><span></span></div>
+            <div class="col-9" id="X69"><span></span></div>
+          </div>
+        </div>
+        <div class="box-9">
+          <div class="row-7">
+            <div class="col-7" id="X77"><span></span></div>
+            <div class="col-8" id="X78"><span></span></div>
+            <div class="col-9" id="X79"><span></span></div>
+          </div>
+          <div class="row-8">
+            <div class="col-7" id="X87"><span></span></div>
+            <div class="col-8" id="X88"><span></span></div>
+            <div class="col-9" id="X89"><span></span></div>
+          </div>
+          <div class="row-9">
+            <div class="col-7" id="X97"><span>9</span></div>
+            <div class="col-8" id="X98"><span></span></div>
+            <div class="col-9" id="X99"><span></span></div>
+          </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </div>
+    <div class="button">
+      <button class="solve-button" id="solve-button">solve sudoku</button>
+    </div>
+    <script type="module" src="./js/settings/arrays.js"></script>
+    <script type="module" src="./js/settings/variables.js"></script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
