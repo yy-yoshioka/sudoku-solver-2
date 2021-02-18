@@ -100,6 +100,7 @@ const X99 = document.getElementById('X99');
 const arr = [
   // box1
   {
+    id: '',
     box: 1,
     cell: X11,
     row: '',
@@ -108,6 +109,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 1,
     cell: X12,
     row: '',
@@ -116,6 +118,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 1,
     cell: X13,
     row: '',
@@ -124,6 +127,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 1,
     cell: X21,
     row: '',
@@ -132,6 +136,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 1,
     cell: X22,
     row: '',
@@ -140,6 +145,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 1,
     cell: X23,
     row: '',
@@ -148,6 +154,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 1,
     cell: X31,
     row: '',
@@ -156,6 +163,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 1,
     cell: X32,
     row: '',
@@ -164,6 +172,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 1,
     cell: X33,
     row: '',
@@ -173,6 +182,7 @@ const arr = [
   },
   // box2
   {
+    id: '',
     box: 2,
     cell: X41,
     row: '',
@@ -181,6 +191,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 2,
     cell: X42,
     row: '',
@@ -189,6 +200,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 2,
     cell: X43,
     row: '',
@@ -197,6 +209,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 2,
     cell: X51,
     row: '',
@@ -205,6 +218,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 2,
     cell: X52,
     row: '',
@@ -213,6 +227,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 2,
     cell: X53,
     row: '',
@@ -221,6 +236,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 2,
     cell: X61,
     row: '',
@@ -229,6 +245,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 2,
     cell: X62,
     row: '',
@@ -237,6 +254,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 2,
     cell: X63,
     row: '',
@@ -246,6 +264,7 @@ const arr = [
   },
   // box3
   {
+    id: '',
     box: 3,
     cell: X71,
     row: '',
@@ -254,6 +273,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 3,
     cell: X72,
     row: '',
@@ -262,6 +282,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 3,
     cell: X73,
     row: '',
@@ -270,6 +291,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 3,
     cell: X81,
     row: '',
@@ -278,6 +300,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 3,
     cell: X82,
     row: '',
@@ -286,6 +309,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 3,
     cell: X83,
     row: '',
@@ -294,6 +318,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 3,
     cell: X91,
     row: '',
@@ -302,6 +327,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 3,
     cell: X92,
     row: '',
@@ -310,6 +336,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 3,
     cell: X93,
     row: '',
@@ -320,6 +347,7 @@ const arr = [
   // box4
 
   {
+    id: '',
     box: 4,
     cell: X14,
     row: '',
@@ -328,6 +356,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 4,
     cell: X15,
     row: '',
@@ -336,6 +365,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 4,
     cell: X16,
     row: '',
@@ -344,6 +374,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 4,
     cell: X24,
     row: '',
@@ -352,6 +383,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 4,
     cell: X25,
     row: '',
@@ -360,6 +392,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 4,
     cell: X26,
     row: '',
@@ -368,6 +401,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 4,
     cell: X34,
     row: '',
@@ -376,6 +410,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 4,
     cell: X35,
     row: '',
@@ -384,6 +419,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 4,
     cell: X36,
     row: '',
@@ -393,6 +429,7 @@ const arr = [
   },
   // box5
   {
+    id: '',
     box: 5,
     cell: X44,
     row: '',
@@ -401,6 +438,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 5,
     cell: X45,
     row: '',
@@ -409,6 +447,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 5,
     cell: X46,
     row: '',
@@ -417,6 +456,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 5,
     cell: X54,
     row: '',
@@ -425,6 +465,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 5,
     cell: X55,
     row: '',
@@ -433,6 +474,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 5,
     cell: X56,
     row: '',
@@ -441,6 +483,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 5,
     cell: X64,
     row: '',
@@ -449,6 +492,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 5,
     cell: X65,
     row: '',
@@ -457,6 +501,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 5,
     cell: X66,
     row: '',
@@ -466,6 +511,7 @@ const arr = [
   },
   // box6
   {
+    id: '',
     box: 6,
     cell: X74,
     row: '',
@@ -474,6 +520,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 6,
     cell: X75,
     row: '',
@@ -482,6 +529,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 6,
     cell: X76,
     row: '',
@@ -490,6 +538,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 6,
     cell: X84,
     row: '',
@@ -498,6 +547,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 6,
     cell: X85,
     row: '',
@@ -506,6 +556,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 6,
     cell: X86,
     row: '',
@@ -514,6 +565,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 6,
     cell: X94,
     row: '',
@@ -522,6 +574,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 6,
     cell: X95,
     row: '',
@@ -530,6 +583,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 6,
     cell: X96,
     row: '',
@@ -541,6 +595,7 @@ const arr = [
   // box7
 
   {
+    id: '',
     box: 7,
     cell: X17,
     row: '',
@@ -549,6 +604,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 7,
     cell: X18,
     row: '',
@@ -557,6 +613,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 7,
     cell: X19,
     row: '',
@@ -565,6 +622,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 7,
     cell: X27,
     row: '',
@@ -573,6 +631,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 7,
     cell: X28,
     row: '',
@@ -581,6 +640,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 7,
     cell: X29,
     row: '',
@@ -589,6 +649,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 7,
     cell: X37,
     row: '',
@@ -597,6 +658,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 7,
     cell: X38,
     row: '',
@@ -605,6 +667,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 7,
     cell: X39,
     row: '',
@@ -614,6 +677,7 @@ const arr = [
   },
   // box8
   {
+    id: '',
     box: 8,
     cell: X47,
     row: '',
@@ -622,6 +686,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 8,
     cell: X48,
     row: '',
@@ -630,6 +695,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 8,
     cell: X49,
     row: '',
@@ -638,6 +704,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 8,
     cell: X57,
     row: '',
@@ -646,6 +713,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 8,
     cell: X58,
     row: '',
@@ -654,6 +722,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 8,
     cell: X59,
     row: '',
@@ -662,6 +731,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 8,
     cell: X67,
     row: '',
@@ -670,6 +740,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 8,
     cell: X68,
     row: '',
@@ -678,6 +749,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 8,
     cell: X69,
     row: '',
@@ -687,6 +759,7 @@ const arr = [
   },
   // box9
   {
+    id: '',
     box: 9,
     cell: X77,
     row: '',
@@ -695,6 +768,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 9,
     cell: X78,
     row: '',
@@ -703,6 +777,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 9,
     cell: X79,
     row: '',
@@ -711,6 +786,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 9,
     cell: X87,
     row: '',
@@ -719,6 +795,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 9,
     cell: X88,
     row: '',
@@ -727,6 +804,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 9,
     cell: X89,
     row: '',
@@ -735,6 +813,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 9,
     cell: X97,
     row: '',
@@ -743,6 +822,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 9,
     cell: X98,
     row: '',
@@ -751,6 +831,7 @@ const arr = [
     options: [1, 2, 3, 4, 5, 6, 7, 8, 9],
   },
   {
+    id: '',
     box: 9,
     cell: X99,
     row: '',
@@ -761,10 +842,15 @@ const arr = [
 ];
 
 const cellArr = arr.map((el) => {
+  // add rowNum && colNum
   let rowNum = +el.cell.id[1];
   let colNum = +el.cell.id[2];
   el.row = rowNum;
   el.col = colNum;
+  // add Id
+  let cellNum = el.cell.id;
+  let idNum = cellNum.substring(1);
+  el.id = idNum;
 
   if (el.cell.lastChild.innerHTML !== '') {
     let number = +el.cell.lastChild.innerHTML;

@@ -5,16 +5,67 @@ import {
   concatArr,
   cellArr,
 } from './js/settings/variables.js';
-import { getBoxArr, getRowArr, getColArr } from './js/settings/arrays.js';
+import { countNumber } from './js/settings/countNumbers.js';
+import {
+  getBoxArr,
+  getRowArr,
+  getColArr,
+  concatBox,
+  initArr,
+  // getOptionsEachNum,
+} from './js/settings/arrays.js';
+import { fillNumbers } from './js/fillNumber/fillNumbers.js';
+import { fillNumberUniqueBox } from './js/fillNumber/fillNumberByBox.js';
+import { reduceOptionsBox } from './js/reduceOptions/reduceByBox.js';
+import { reduceOptionsRow } from './js/reduceOptions/reduceByRow.js';
+import { reduceOptionsCol } from './js/reduceOptions/reduceByCol.js';
+import { uniqueOptionInBox } from './js/uniqueOption/uniqueOptionBox.js';
 
-const main = async (cellArray, boxArray, rowArray, colArray, concatArray) => {
-  const boxList = getBoxArr(cellArray, boxArray);
-  const rowList = getRowArr(cellArray, rowArray);
-  const colList = getColArr(cellArray, colArray);
+const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
+  for (let i = 0; i < 100; i++) {
+    console.log(+`${i}` + 1);
 
-  console.log(boxList);
-  console.log(rowList);
-  console.log(colList);
+    // count filled Number
+    const countBegin = countNumber(cellArray);
+    // get BoxList && rowList && colList
+    const boxList = getBoxArr(cellArray, boxArray);
+    const rowList = getRowArr(cellArray, rowArray);
+    const colList = getColArr(cellArray, colArray);
+
+    // reduce Options by boxList && rowList && colList
+    const reduceByBoxArr = reduceOptionsBox(cellArray, boxList);
+    const reduceByRowArr = reduceOptionsRow(reduceByBoxArr, rowList);
+    const reduceByColArr = reduceOptionsCol(reduceByRowArr, colList);
+
+    // fill Number to cell
+    const fillNum = fillNumbers(reduceByColArr);
+    const boxArr = initArr(concatBox);
+
+    // get unique number in the box
+    const uniqueBoxOption = uniqueOptionInBox(fillNum, boxArr);
+    // fill number to the cell
+    const uniqueArr = fillNumberUniqueBox(fillNum, uniqueBoxOption);
+
+    // count filled Number
+    const countEnd = countNumber(uniqueArr);
+
+    cellArray = uniqueArr;
+
+    if (countBegin === countEnd) {
+      if (countEnd !== 81) {
+        let leftNum = 81 - countEnd;
+        const leftArr = uniqueArr.filter((item) => item.options.length === 2);
+        leftArr.forEach((el) => {
+          console.log(el.cell);
+          console.log(el.options);
+        });
+        break;
+      } else {
+        console.log('done');
+        break;
+      }
+    }
+  }
 };
 
-main(cellArr, boxArr, rowArr, colArr, concatArr);
+main(cellArr, boxArr, rowArr, colArr, concatBox);
