@@ -22,8 +22,9 @@ import { reduceOptionsCol } from './js/reduceOptions/reduceByCol.js';
 import { uniqueOptionInBox } from './js/uniqueOption/uniqueOptionBox.js';
 
 const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
+  let resArr = [];
   for (let i = 0; i < 100; i++) {
-    console.log(+`${i}` + 1);
+    // console.log(+`${i}` + 1);
 
     // count filled Number
     const countBegin = countNumber(cellArray);
@@ -50,22 +51,23 @@ const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
     const countEnd = countNumber(uniqueArr);
 
     cellArray = uniqueArr;
+    resArr = uniqueArr;
 
     if (countBegin === countEnd) {
       if (countEnd !== 81) {
         let leftNum = 81 - countEnd;
-        const leftArr = uniqueArr.filter((item) => item.options.length === 2);
-        leftArr.forEach((el) => {
-          console.log(el.cell);
-          console.log(el.options);
-        });
+        console.log(leftNum);
         break;
       } else {
         console.log('done');
+
         break;
       }
     }
   }
+  return resArr;
 };
 
-main(cellArr, boxArr, rowArr, colArr, concatBox);
+const result = main(cellArr, boxArr, rowArr, colArr, concatBox);
+
+export { result };

@@ -8,7 +8,6 @@ const uniqueOptionInBox = (arr, concatArr) => {
   const concatRes = concatBoxArr(filterArr, boxArr);
   const concatBoxRes = getBoxEachNumber(concatRes);
   fillNumberUniqueBox(filterArr, concatBoxRes);
-  console.log(concatBoxRes);
 
   return concatBoxRes;
 };
@@ -43,6 +42,7 @@ const getBoxEachNumber = (concatResult) => {
     }, {});
     filter.push(newArr);
   });
+
   return filter;
 };
 

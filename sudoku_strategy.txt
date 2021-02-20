@@ -1,0 +1,46 @@
+
+
+[ 1 ] box
+
+from ; box array 
+
+get ;  pair numbers
+
+remove location ; box array 
+
+remove values; pair numbers
+
+
+[ 2 ] row
+
+from : box array
+
+get: 2,3 numbers in the same row
+
+remove location: same row
+
+remove values : getted values
+
+
+[ 3 ] col 
+
+from : box array
+
+get : 2,3 numbers in the same col
+
+remove location: same col
+
+remove values : getted values
+
+
+
+[ 4 ] 
+
+from : all array
+
+get : pair numbers in the same row or col
+
+remove location : same row or col
+
+remove values : getted values
+

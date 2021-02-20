@@ -1,4 +1,4 @@
-import { difference, concatArrays } from '../settings/arrays.js';
+import { concatArrays } from '../settings/arrays.js';
 import { fillNumbers } from './fillNumbers.js';
 
 const fillNumberUniqueBox = (arr, concatBoxResult) => {

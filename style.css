@@ -17,6 +17,7 @@ body {
   align-items: center;
   height: auto;
   width: auto;
+  height: 100%;
 }
 
 .box-block {
