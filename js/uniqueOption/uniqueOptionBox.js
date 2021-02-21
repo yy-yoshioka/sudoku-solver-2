@@ -32,6 +32,7 @@ const getBoxEachNumber = (concatResult) => {
     let boxNum = +el.box;
     const filterArr = concatResult.filter((item) => item.box === boxNum);
     const newArray = filterArr[0].arr;
+    console.log(newArray);
     const newArr = newArray.reduce((acc, curr) => {
       if (typeof acc[curr] == 'undefined') {
         acc[curr] = 1;

@@ -21,6 +21,9 @@ import { reduceOptionsRow } from './js/reduceOptions/reduceByRow.js';
 import { reduceOptionsCol } from './js/reduceOptions/reduceByCol.js';
 import { uniqueOptionInBox } from './js/uniqueOption/uniqueOptionBox.js';
 
+import { twoPairMain } from './js/twoPairOptions/twoPairMain.js';
+import { identicalRowCol } from './js/identicalDirection/identical.js';
+
 const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
   let resArr = [];
   for (let i = 0; i < 100; i++) {
@@ -46,17 +49,21 @@ const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
     const uniqueBoxOption = uniqueOptionInBox(fillNum, boxArr);
     // fill number to the cell
     const uniqueArr = fillNumberUniqueBox(fillNum, uniqueBoxOption);
+    // reduce by two pair
+    const twoPair = twoPairMain(uniqueArr);
 
     // count filled Number
     const countEnd = countNumber(uniqueArr);
 
-    cellArray = uniqueArr;
+    cellArray = twoPair;
     resArr = uniqueArr;
 
     if (countBegin === countEnd) {
       if (countEnd !== 81) {
         let leftNum = 81 - countEnd;
         console.log(leftNum);
+        // reduce by number in the same row or col
+        const ReduceIdenticalRowCol = identicalRowCol(twoPair);
         break;
       } else {
         console.log('done');

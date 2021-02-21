@@ -44,3 +44,25 @@ remove location : same row or col
 
 remove values : getted values
 
+
+
+[ 5 ]
+
+ all array => 
+
+
+	( i ) only box => numbers => reduce from other options
+
+	( ii ) only row => numbers => reduce to same row
+ 
+	( iii)only col => numbers => reduce to same col
+
+	( iv ) box && row 
+
+	( v ) box && col
+
+
+
+
+=> 0k
+
