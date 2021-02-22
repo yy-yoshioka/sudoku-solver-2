@@ -492,3 +492,12 @@ let array1 = [2, 3];
 //   // console.log(newCell);
 //   return newCell;
 // });
+
+// array remove by value
+// https://stackoverflow.com/questions/3954438/how-to-remove-item-from-array-by-value
+
+var array = [1, 2, 3, 4];
+var item = 3;
+
+var index = array.indexOf(item);
+array.splice(index, 1);

@@ -51,7 +51,6 @@ const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
     const uniqueArr = fillNumberUniqueBox(fillNum, uniqueBoxOption);
     // reduce by two pair
     const twoPair = twoPairMain(uniqueArr);
-
     // count filled Number
     const countEnd = countNumber(uniqueArr);
 

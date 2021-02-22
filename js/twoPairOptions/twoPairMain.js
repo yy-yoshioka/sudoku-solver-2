@@ -9,7 +9,6 @@ const twoPairMain = (result) => {
   const boxAll = getRes.map((item) => item.options).reduce(reducerOptions, {});
 
   const newBoxAll = objectFilter(boxAll);
-  // console.log(newBoxAll);
 
   let arr = [];
   let cellArray = [];
