@@ -8,13 +8,17 @@ const identicalRowReduce = (cellArr, box, row, number) => {
   //   https://stackoverflow.com/questions/3954438/how-to-remove-item-from-array-by-value
   //   console.log(targetCell);
 
-  const resultArr = targetCell.map((item) => {
+  const resultRowArr = targetCell.map((item) => {
     let targetOptions = item.options;
-    let index = targetOptions.indexOf(reduceNum);
-    targetOptions.splice(index, 1);
+    let check = targetOptions.includes(reduceNum);
+    if (check === true) {
+      let index = targetOptions.indexOf(reduceNum);
+      targetOptions.splice(index, 1);
+    }
     return item;
   });
-  return resultArr;
+
+  return resultRowArr;
 };
 
 export { identicalRowReduce };

@@ -2,6 +2,7 @@ import { cellArr } from '../settings/variables.js';
 import { reducerOptions, objectFilter, reducerRowCol } from './twoPairArray.js';
 import { boxRowColChecker } from './boxRowColCheck.js';
 import { concatArrays } from '../settings/arrays.js';
+// import { fillNumbers } from '../fillNumber/fillNumbers.js';
 
 const twoPairMain = (result) => {
   let getRes = result;
@@ -49,7 +50,8 @@ const twoPairMain = (result) => {
     arr = arr.concat(boxRowColRes);
     getRes = concatArrays(getRes, arr);
   }
-
+  // const resultArr = fillNumbers(getRes);
+  console.log(getRes);
   return getRes;
 };
 

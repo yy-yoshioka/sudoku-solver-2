@@ -51,18 +51,26 @@ const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
     const uniqueArr = fillNumberUniqueBox(fillNum, uniqueBoxOption);
     // reduce by two pair
     const twoPair = twoPairMain(uniqueArr);
-    // count filled Number
-    const countEnd = countNumber(uniqueArr);
 
-    cellArray = twoPair;
+    // const ReduceIdenticalRowCol = identicalRowCol(twoPair);
+
+    const identicalRowCol1 = identicalRowCol(twoPair);
+
+    // cellArray = reduceIdenticalRowCol;
+    // count filled Number
+    const countEnd = countNumber(identicalRowCol1);
+
+    cellArray = identicalRowCol1;
+
     resArr = uniqueArr;
 
     if (countBegin === countEnd) {
       if (countEnd !== 81) {
         let leftNum = 81 - countEnd;
-        console.log(leftNum);
+
+        // console.log(leftNum);
         // reduce by number in the same row or col
-        const ReduceIdenticalRowCol = identicalRowCol(twoPair);
+
         break;
       } else {
         console.log('done');

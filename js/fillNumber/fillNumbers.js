@@ -16,7 +16,6 @@ const fillNumbers = (arr) => {
   });
 
   filledNumberArray = concatArrays(arr, fillNumber);
-
   differenceArray = difference(filledNumberArray, fillNum);
 
   let differenceUnique = [];
