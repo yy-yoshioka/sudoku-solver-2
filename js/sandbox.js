@@ -496,7 +496,34 @@ let array1 = [2, 3];
 // array remove by value
 // https://stackoverflow.com/questions/3954438/how-to-remove-item-from-array-by-value
 
-var array = [1, 2, 3, 4];
-var item = 2;
+var array = [6, 1, 2, 3, 4, 5];
+var item = 3;
 
-// console.log(array);
+var index = array.indexOf(item);
+array.splice(index, 1);
+
+console.log(array);
+
+const fillingNum = async () => {
+  const res = await result;
+  // console.log(res);
+  const resBox3 = res.filter((item) => item.box === 3);
+  const newArr = res.map((item) => {
+    if (item.options.length === 1 && item.cell.lastChild.innerHTML === '') {
+      console.log(item.cell);
+      console.log(item.options[0]);
+      item.cell.lastChild.innerHTML = item.options[0];
+    }
+    return item;
+  });
+
+  return newArr;
+};
+
+fillingNum();
+var array = [1, 2, 3, 4, 6, 7, 8, 9, 0];
+var filtered = array.filter((value) => {
+  return value != 5;
+});
+
+// console.log(filtered);

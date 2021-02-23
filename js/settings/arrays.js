@@ -53,7 +53,6 @@ const getColArr = (cellArr, colArr) => {
       colOptionArr.push(optionNum);
     }
   });
-
   return colArray;
 };
 
@@ -183,6 +182,7 @@ const concatBoxArr = (arr, concatArr) => {
     let option = el.options;
     let arrNum = box;
     let array = totalArr[arrNum];
+
     array.arr = array.arr.concat(option);
     return totalArr;
   });

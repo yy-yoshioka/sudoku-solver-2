@@ -1017,4 +1017,43 @@ const concatArr = [
   },
 ];
 
-export { cellArr, boxArr, colArr, rowArr, concatArr };
+let resBoxArr = [
+  {
+    box: 1,
+    arr: [],
+  },
+  {
+    box: 2,
+    arr: [],
+  },
+  {
+    box: 3,
+    arr: [],
+  },
+  {
+    box: 4,
+    arr: [],
+  },
+  {
+    box: 5,
+    arr: [],
+  },
+  {
+    box: 6,
+    arr: [],
+  },
+  {
+    box: 7,
+    arr: [],
+  },
+  {
+    box: 8,
+    arr: [],
+  },
+  {
+    box: 9,
+    arr: [],
+  },
+];
+
+export { cellArr, boxArr, colArr, rowArr, concatArr, resBoxArr };

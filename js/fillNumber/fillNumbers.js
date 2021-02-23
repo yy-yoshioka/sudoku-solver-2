@@ -1,35 +1,41 @@
-import { difference, concatArrays } from '../settings/arrays.js';
-
 const fillNumbers = (arr) => {
-  let differenceArray = [];
-  let filledNumberArray;
-
-  const fillNum = arr.filter(
-    (item) => item.options.length === 1 && item.cell.lastChild.innerHTML === ''
-  );
-
-  const fillNumber = fillNum.map((el) => {
-    let cell = el.cell;
-    let options = +el.options[0];
-    cell.lastChild.innerHTML = options;
-    return el;
+  const newArr = arr.map((item) => {
+    if (item.options.length === 1 && item.cell.lastChild.innerHTML === '') {
+      const number = item.options[0];
+      item.cell.lastChild.innerHTML = item.options[0];
+      // console.log(item.box);
+      // reduce number from options in the same box
+      const getBox = item.box;
+      const sameBox = arr.filter((item) => item.box === getBox);
+      // const filterBox = sameBox.map((fil) => {
+      //   const arr = fil.options;
+      //   const filtered = arr.filter((value) => {
+      //     return value != number;
+      //   });
+      //   return filtered;
+      // });
+      // return filterBox;
+    }
+    return item;
   });
 
-  filledNumberArray = concatArrays(arr, fillNumber);
-  differenceArray = difference(filledNumberArray, fillNum);
+  // const optionArr = fillNumbersFromInnerHTML(newArr);
+  fillNumbersFromInnerHTML(newArr);
 
-  let differenceUnique = [];
-  differenceUnique = differenceArray.filter(
-    (item) => item.options.length === 1 && item.cell.lastChild.innerHTML === ''
+  return newArr;
+};
+
+const fillNumbersFromInnerHTML = (arr) => {
+  const optionEdit = arr.filter(
+    (item) => item.cell.lastChild.innerHTML !== '' && item.options.length !== 1
   );
 
-  if (differenceArray.length !== 0) {
-    const filledNumRes = concatArrays(filledNumberArray, differenceArray);
-    return filledNumRes;
-  } else {
-    const filledNumRes = filledNumberArray;
-    return filledNumRes;
-  }
+  const fillNumToArr = optionEdit.map((el) => {
+    el.options = [+el.cell.lastChild.innerHTML];
+
+    return el;
+  });
+  return fillNumToArr;
 };
 
 export { fillNumbers };

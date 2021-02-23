@@ -4,7 +4,6 @@ import { fillNumbers } from './fillNumbers.js';
 const fillNumberUniqueBox = (arr, concatBoxResult) => {
   let concatResObj = {};
   let concatResArr = [];
-
   concatBoxResult.forEach((el, index) => {
     // find unique number in the box
     for (const [key, value] of Object.entries(el)) {
@@ -17,7 +16,6 @@ const fillNumberUniqueBox = (arr, concatBoxResult) => {
             item.options.includes(targetNum) &&
             item.options.length !== 1
         );
-
         if (filterArr.length !== 0) {
           concatResObj = {};
           concatResObj = {
@@ -29,17 +27,15 @@ const fillNumberUniqueBox = (arr, concatBoxResult) => {
             options: [targetNum],
             value: filterArr[0].value,
           };
-
           concatResArr.push(concatResObj);
         }
       }
     }
   });
 
-  // console.log(concatResArr);
-
   const resultArr = concatArrays(arr, concatResArr);
   const res = fillNumbers(resultArr);
+
   return res;
 };
 

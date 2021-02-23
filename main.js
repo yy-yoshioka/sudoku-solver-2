@@ -23,46 +23,44 @@ import { uniqueOptionInBox } from './js/uniqueOption/uniqueOptionBox.js';
 
 import { twoPairMain } from './js/twoPairOptions/twoPairMain.js';
 import { identicalRowCol } from './js/identicalDirection/identical.js';
+import { identicalColReduce } from './js/identicalDirection/identicalCol.js';
 
 const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
-  let resArr = [];
   for (let i = 0; i < 100; i++) {
-    // console.log(+`${i}` + 1);
-
+    console.log(+`${i}` + 1);
+    const box8 = cellArray.filter((item) => item.box === 8);
+    console.log(box8);
+    // ! 1
     // count filled Number
     const countBegin = countNumber(cellArray);
     // get BoxList && rowList && colList
     const boxList = getBoxArr(cellArray, boxArray);
     const rowList = getRowArr(cellArray, rowArray);
     const colList = getColArr(cellArray, colArray);
-
     // reduce Options by boxList && rowList && colList
     const reduceByBoxArr = reduceOptionsBox(cellArray, boxList);
     const reduceByRowArr = reduceOptionsRow(reduceByBoxArr, rowList);
     const reduceByColArr = reduceOptionsCol(reduceByRowArr, colList);
-
     // fill Number to cell
     const fillNum = fillNumbers(reduceByColArr);
-    const boxArr = initArr(concatBox);
-
+    const fil = fillNum.filter(
+      (item) =>
+        item.options.length !== 1 && item.cell.lastChild.innerHTML !== ''
+    );
+    console.log(fil);
+    const box = initArr(concatBox);
     // get unique number in the box
-    const uniqueBoxOption = uniqueOptionInBox(fillNum, boxArr);
+    const uniqueBoxOption = uniqueOptionInBox(fillNum, box);
     // fill number to the cell
     const uniqueArr = fillNumberUniqueBox(fillNum, uniqueBoxOption);
     // reduce by two pair
     const twoPair = twoPairMain(uniqueArr);
+    const pairRes = twoPair;
 
-    // const ReduceIdenticalRowCol = identicalRowCol(twoPair);
-
-    const identicalRowCol1 = identicalRowCol(twoPair);
-
-    // cellArray = reduceIdenticalRowCol;
     // count filled Number
-    const countEnd = countNumber(identicalRowCol1);
+    const countEnd = countNumber(pairRes);
 
-    cellArray = identicalRowCol1;
-
-    resArr = uniqueArr;
+    cellArray = pairRes;
 
     if (countBegin === countEnd) {
       if (countEnd !== 81) {
@@ -70,16 +68,17 @@ const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
 
         // console.log(leftNum);
         // reduce by number in the same row or col
+        // reduce by row && col
+        // const ReduceIdenticalRowCol = identicalRowCol(pairRes);
 
         break;
       } else {
         console.log('done');
-
         break;
       }
     }
   }
-  return resArr;
+  return cellArray;
 };
 
 const result = main(cellArr, boxArr, rowArr, colArr, concatBox);
