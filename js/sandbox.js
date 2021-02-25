@@ -502,16 +502,12 @@ var item = 3;
 var index = array.indexOf(item);
 array.splice(index, 1);
 
-console.log(array);
-
 const fillingNum = async () => {
   const res = await result;
   // console.log(res);
   const resBox3 = res.filter((item) => item.box === 3);
   const newArr = res.map((item) => {
     if (item.options.length === 1 && item.cell.lastChild.innerHTML === '') {
-      console.log(item.cell);
-      console.log(item.options[0]);
       item.cell.lastChild.innerHTML = item.options[0];
     }
     return item;
@@ -521,9 +517,20 @@ const fillingNum = async () => {
 };
 
 fillingNum();
-var array = [1, 2, 3, 4, 6, 7, 8, 9, 0];
-var filtered = array.filter((value) => {
-  return value != 5;
-});
 
 // console.log(filtered);
+
+// console.log(wizards);
+
+let newWi = [];
+newWi.push(wizards[0]);
+newWi.push(wizards[1]);
+// console.log(newWi);
+for (let i = 0; i < newWi.length - 1; i++) {
+  for (let j = i + 1; j < newWi.length; j++) {
+    let res = [];
+    res.push(newWi[i]);
+    res.push(newWi[j]);
+    // console.log(res);
+  }
+}

@@ -27,9 +27,7 @@ import { identicalColReduce } from './js/identicalDirection/identicalCol.js';
 
 const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
   for (let i = 0; i < 100; i++) {
-    console.log(+`${i}` + 1);
-    const box8 = cellArray.filter((item) => item.box === 8);
-    console.log(box8);
+    // console.log(+`${i}` + 1);
     // ! 1
     // count filled Number
     const countBegin = countNumber(cellArray);
@@ -43,41 +41,40 @@ const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
     const reduceByColArr = reduceOptionsCol(reduceByRowArr, colList);
     // fill Number to cell
     const fillNum = fillNumbers(reduceByColArr);
-    const fil = fillNum.filter(
-      (item) =>
-        item.options.length !== 1 && item.cell.lastChild.innerHTML !== ''
-    );
-    console.log(fil);
     const box = initArr(concatBox);
     // get unique number in the box
     const uniqueBoxOption = uniqueOptionInBox(fillNum, box);
     // fill number to the cell
     const uniqueArr = fillNumberUniqueBox(fillNum, uniqueBoxOption);
+
     // reduce by two pair
     const twoPair = twoPairMain(uniqueArr);
+
     const pairRes = twoPair;
 
+    // const box8 = pairRes.filter((item) => item.box === 8);
+    // console.log(box8);
+
+    const ReduceIdenticalRowCol = identicalRowCol(pairRes);
+    cellArray = ReduceIdenticalRowCol;
     // count filled Number
-    const countEnd = countNumber(pairRes);
+    const countEnd = countNumber(ReduceIdenticalRowCol);
 
-    cellArray = pairRes;
+    // if (countBegin === countEnd) {
+    //   if (countEnd !== 81) {
+    //     let leftNum = 81 - countEnd;
+    //     // console.log(leftNum);
+    //     // reduce by number in the same row or col
+    //     // reduce by row && col
 
-    if (countBegin === countEnd) {
-      if (countEnd !== 81) {
-        let leftNum = 81 - countEnd;
-
-        // console.log(leftNum);
-        // reduce by number in the same row or col
-        // reduce by row && col
-        // const ReduceIdenticalRowCol = identicalRowCol(pairRes);
-
-        break;
-      } else {
-        console.log('done');
-        break;
-      }
-    }
+    //     break;
+    //   } else {
+    //     console.log('done');
+    //     break;
+    //   }
+    // }
   }
+
   return cellArray;
 };
 

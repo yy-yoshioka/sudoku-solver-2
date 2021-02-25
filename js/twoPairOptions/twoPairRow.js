@@ -1,7 +1,7 @@
-const rowOptionsReduce = (cellArray, rowFilterArray) => {
+const rowOptionsReduce = (cellArray, rowFilterArray, cell1, cell2) => {
   const rowNum = +rowFilterArray[0].row;
-  const cell1 = rowFilterArray[0].id;
-  const cell2 = rowFilterArray[1].id;
+  const rowCell1 = cell1;
+  const rowCell2 = cell2;
 
   const getRowOptions = cellArray.filter(
     (item) =>
@@ -10,6 +10,7 @@ const rowOptionsReduce = (cellArray, rowFilterArray) => {
       item.id !== cell2 &&
       item.options.length !== 1
   );
+
   return getRowOptions;
 };
 

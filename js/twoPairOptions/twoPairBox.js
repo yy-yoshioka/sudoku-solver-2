@@ -1,7 +1,7 @@
-const boxOptionsReduce = (cellArray, boxFilterArray) => {
+const boxOptionsReduce = (cellArray, boxFilterArray, cell1, cell2) => {
   const boxNum = boxFilterArray[0].box;
-  const boxCell1 = boxFilterArray[0].id;
-  const boxCell2 = boxFilterArray[1].id;
+  const boxCell1 = cell1;
+  const boxCell2 = cell2;
 
   const getBoxOptions = cellArray.filter(
     (item) =>

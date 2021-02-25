@@ -10,13 +10,11 @@ const identicalColReduce = (cellArr, box, col, number) => {
 
   const resultColArr = targetCell.map((item) => {
     let targetOptions = item.options;
-
     let check = targetOptions.includes(reduceNum);
     if (check === true) {
       let index = targetOptions.indexOf(reduceNum);
       targetOptions.splice(index, 1);
     }
-
     return item;
   });
 
