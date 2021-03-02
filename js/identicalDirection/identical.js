@@ -8,7 +8,6 @@ import { fillNumbers } from '../fillNumber/fillNumbers.js';
 
 const identicalRowCol = (cellArr) => {
   let boxAll = cellArr;
-  console.log('identical file');
 
   const resBox = initArr(resBoxArr);
   const res = concatBoxArr(boxAll, resBox);

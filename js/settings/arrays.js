@@ -126,9 +126,7 @@ const concatBox = [
 // https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript
 const difference = (arr1, fillNum) => {
   let difference = [];
-  let differenceArr = [];
   let differenceObj = {};
-  let fillNumber = [];
   let resArray = [];
   fillNumber = fillNum.map((el) => {
     let box = el.box;
@@ -182,7 +180,6 @@ const concatBoxArr = (arr, concatArr) => {
     let option = el.options;
     let arrNum = box;
     let array = totalArr[arrNum];
-
     array.arr = array.arr.concat(option);
     return totalArr;
   });
@@ -210,6 +207,74 @@ const getBoxEachNumber = (concatResult) => {
   return filter;
 };
 
+const concatRowArr = (arr, concatArr) => {
+  const totalArr = concatArr;
+  arr.forEach((el) => {
+    let row = +el.row - 1;
+    let option = el.options;
+    let arrNum = row;
+    let array = totalArr[arrNum];
+
+    array.arr = array.arr.concat(option);
+    return totalArr;
+  });
+  return totalArr;
+};
+
+const getRowEachNumber = (concatArr) => {
+  let filter = [];
+  concatArr.forEach((el) => {
+    let rowNum = +el.row;
+    const filterArr = concatArr.filter((item) => item.row === rowNum);
+    const newArray = filterArr[0].arr;
+    const newArr = newArray.reduce((acc, curr) => {
+      if (typeof acc[curr] == 'undefined') {
+        acc[curr] = 1;
+      } else {
+        acc[curr] += 1;
+      }
+      return acc;
+    }, {});
+    filter.push(newArr);
+  });
+
+  return filter;
+};
+
+const concatColArr = (arr, concatArr) => {
+  const totalArr = concatArr;
+  arr.forEach((el) => {
+    let col = +el.col - 1;
+    let option = el.options;
+    let arrNum = col;
+    let array = totalArr[arrNum];
+
+    array.arr = array.arr.concat(option);
+    return totalArr;
+  });
+  return totalArr;
+};
+
+const getColEachNumber = (concatArr) => {
+  let filter = [];
+  concatArr.forEach((el) => {
+    let colNum = +el.col;
+    const filterArr = concatArr.filter((item) => item.col === colNum);
+    const newArray = filterArr[0].arr;
+    const newArr = newArray.reduce((acc, curr) => {
+      if (typeof acc[curr] == 'undefined') {
+        acc[curr] = 1;
+      } else {
+        acc[curr] += 1;
+      }
+      return acc;
+    }, {});
+    filter.push(newArr);
+  });
+
+  return filter;
+};
+
 export {
   getBoxArr,
   getRowArr,
@@ -221,6 +286,10 @@ export {
   difference,
   concatBoxArr,
   getBoxEachNumber,
+  concatRowArr,
+  getRowEachNumber,
+  concatColArr,
+  getColEachNumber,
 
   // getOptionsEachNum,
   // getEachNumber,

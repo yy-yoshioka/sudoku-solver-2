@@ -1,0 +1,9 @@
+
+
+rule for X-wing
+
+2 pair in the row or col 
+
+and make it rectangle or square .
+
+

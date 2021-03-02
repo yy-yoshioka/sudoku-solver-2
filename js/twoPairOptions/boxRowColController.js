@@ -16,7 +16,6 @@ const boxRowColCtr = (cellArr, options, key) => {
   const number2 = +key[2];
   const reducedArr = [];
   reducedArr.push(number1, number2);
-  const oldCellArr = cellArr;
 
   // same Box && same Row
 

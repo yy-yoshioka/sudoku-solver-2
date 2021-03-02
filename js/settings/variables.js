@@ -1056,4 +1056,91 @@ let resBoxArr = [
   },
 ];
 
-export { cellArr, boxArr, colArr, rowArr, concatArr, resBoxArr };
+let resRowArr = [
+  {
+    row: 1,
+    arr: [],
+  },
+  {
+    row: 2,
+    arr: [],
+  },
+  {
+    row: 3,
+    arr: [],
+  },
+  {
+    row: 4,
+    arr: [],
+  },
+  {
+    row: 5,
+    arr: [],
+  },
+  {
+    row: 6,
+    arr: [],
+  },
+  {
+    row: 7,
+    arr: [],
+  },
+  {
+    row: 8,
+    arr: [],
+  },
+  {
+    row: 9,
+    arr: [],
+  },
+];
+
+let resColArr = [
+  {
+    col: 1,
+    arr: [],
+  },
+  {
+    col: 2,
+    arr: [],
+  },
+  {
+    col: 3,
+    arr: [],
+  },
+  {
+    col: 4,
+    arr: [],
+  },
+  {
+    col: 5,
+    arr: [],
+  },
+  {
+    col: 6,
+    arr: [],
+  },
+  {
+    col: 7,
+    arr: [],
+  },
+  {
+    col: 8,
+    arr: [],
+  },
+  {
+    col: 9,
+    arr: [],
+  },
+];
+
+export {
+  cellArr,
+  boxArr,
+  colArr,
+  rowArr,
+  concatArr,
+  resBoxArr,
+  resRowArr,
+  resColArr,
+};

@@ -497,11 +497,13 @@ let array1 = [2, 3];
 // https://stackoverflow.com/questions/3954438/how-to-remove-item-from-array-by-value
 
 var array = [6, 1, 2, 3, 4, 5];
-var item = 3;
+var item = 10;
+if (array.includes(item)) {
+  var index = array.indexOf(item);
+  array.splice(index, 1);
+}
 
-var index = array.indexOf(item);
-array.splice(index, 1);
-
+// console.log(array);
 const fillingNum = async () => {
   const res = await result;
   // console.log(res);

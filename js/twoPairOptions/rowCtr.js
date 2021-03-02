@@ -10,6 +10,7 @@ const rowController = (cellArr, cell1, cell2, row, reduceArr) => {
   );
 
   const resRow = differenceArr(getCells, reduceArr);
+
   return resRow;
 };
 

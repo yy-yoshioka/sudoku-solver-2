@@ -38,6 +38,8 @@ body {
 .box-9 {
   height: 180px;
   width: 180px;
+  /* max-width: 500px; */
+  /* min-width: 250px; */
   border: 0.01px solid black;
 }
 
@@ -55,7 +57,6 @@ body {
   align-items: center;
   justify-content: center;
   border: 0.01px solid black;
-
   height: 60px;
 }
 

@@ -23,7 +23,8 @@ import { uniqueOptionInBox } from './js/uniqueOption/uniqueOptionBox.js';
 
 import { twoPairMain } from './js/twoPairOptions/twoPairMain.js';
 import { identicalRowCol } from './js/identicalDirection/identical.js';
-import { identicalColReduce } from './js/identicalDirection/identicalCol.js';
+import { wingMain } from './js/wing/wingMain.js';
+import { tempMain } from './js/temporaryStorage/temporaryMain.js';
 
 const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
   for (let i = 0; i < 100; i++) {
@@ -46,7 +47,6 @@ const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
     const uniqueBoxOption = uniqueOptionInBox(fillNum, box);
     // fill number to the cell
     const uniqueArr = fillNumberUniqueBox(fillNum, uniqueBoxOption);
-
     // reduce by two pair
     const twoPair = twoPairMain(uniqueArr);
 
@@ -56,23 +56,28 @@ const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
     // console.log(box8);
 
     const ReduceIdenticalRowCol = identicalRowCol(pairRes);
-    cellArray = ReduceIdenticalRowCol;
+    const wingArray = wingMain(ReduceIdenticalRowCol);
     // count filled Number
-    const countEnd = countNumber(ReduceIdenticalRowCol);
+    const countEnd = countNumber(wingArray);
+    cellArray = wingArray;
 
-    // if (countBegin === countEnd) {
-    //   if (countEnd !== 81) {
-    //     let leftNum = 81 - countEnd;
-    //     // console.log(leftNum);
-    //     // reduce by number in the same row or col
-    //     // reduce by row && col
+    if (countBegin === countEnd) {
+      if (countEnd !== 81) {
+        let leftNum = 81 - countEnd;
+        console.log(leftNum);
+        if (leftNum !== 0) {
+          const pairList = cellArray.filter(
+            (item) => item.options.length === 2
+          );
+          const tempMainRes = tempMain(pairList);
+        }
 
-    //     break;
-    //   } else {
-    //     console.log('done');
-    //     break;
-    //   }
-    // }
+        break;
+      } else {
+        console.log('done');
+        break;
+      }
+    }
   }
 
   return cellArray;

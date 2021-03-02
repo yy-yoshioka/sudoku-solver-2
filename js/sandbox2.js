@@ -14,7 +14,6 @@ import { result } from '../main.js';
 const identicalRowCol1 = async () => {
   let boxAll = await result;
 
-  console.log('identical file');
   const resBox = initArr(resBoxArr);
   const res = concatBoxArr(boxAll, resBox);
   const eachNumRes = getBoxEachNumber(res);
