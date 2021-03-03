@@ -25,6 +25,7 @@ import { twoPairMain } from './js/twoPairOptions/twoPairMain.js';
 import { identicalRowCol } from './js/identicalDirection/identical.js';
 import { wingMain } from './js/wing/wingMain.js';
 import { tempMain } from './js/temporaryStorage/temporaryMain.js';
+import { errorCtrMain } from './js/errorController/errorCtr.js';
 
 const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
   for (let i = 0; i < 100; i++) {
@@ -57,29 +58,38 @@ const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
 
     const ReduceIdenticalRowCol = identicalRowCol(pairRes);
     const wingArray = wingMain(ReduceIdenticalRowCol);
+
     // count filled Number
     const countEnd = countNumber(wingArray);
     cellArray = wingArray;
 
+    // error check
+    const errorCheck = errorCtrMain(wingArray);
+    if (errorCheck === 'error') {
+      break;
+    }
+
     if (countBegin === countEnd) {
       if (countEnd !== 81) {
         let leftNum = 81 - countEnd;
-        console.log(leftNum);
         if (leftNum !== 0) {
           const pairList = cellArray.filter(
             (item) => item.options.length === 2
           );
-          const tempMainRes = tempMain(pairList);
+          const tempMainRes = await tempMain(pairList, cellArray);
+          const countNum = countNumber(tempMainRes);
+          if (countEnd === countNum) {
+            break;
+          } else {
+            cellArray = tempMainRes;
+          }
         }
-
-        break;
       } else {
         console.log('done');
         break;
       }
     }
   }
-
   return cellArray;
 };
 
