@@ -78,3 +78,13 @@ const identicalRowCol1 = async () => {
 };
 
 identicalRowCol1();
+
+console.log('hi');
+
+const num = [{ id: 1, number: 2, cell: { id: 1 } }];
+let copyNum2 = Array.from(num);
+let copyNum = [...num];
+
+// localStorage.setItem('data', JSON.stringify(num));
+
+num[0].id = 2;
