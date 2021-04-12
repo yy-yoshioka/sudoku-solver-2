@@ -1,5 +1,5 @@
 <span align= 'center'>
-<h1>sudoku solver</>
+  <h1>sudoku solver</></h1>
 </span>
   
   <p align="center">
