@@ -11,8 +11,13 @@
  ## description
 
  This app is created with HTML5 , CSS3 and vanilla javascirpt.\
- sudoku is one of the most popular logical game. As you know there are many many starategies to solve sudoku. 
- In this time I just covered some of them, such as to follow the basic rule is that **"every column and row must have all the numbers from 1 to 9."** , **"every square have all the numbers from 1 to 9"** ./
+ sudoku is one of the most popular logical game and the rules are pretty simple, **"every column and row must have all the numbers from 1 to 9."** , **"every square have all the numbers from 1 to 9"** .
+
+As you know there are many many starategies to solve sudoku. 
+ In this time I just covered some of them and I did not use any algorithms to solve sudoku.
+Just follow the way to solve it manually, such as using pencil and the asign the number to cells.
+
+
  
  
  
