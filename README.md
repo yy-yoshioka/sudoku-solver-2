@@ -7,7 +7,11 @@
   <img src="https://img.shields.io/badge/license-MIT-blue.svg">
 </a>
  </p>
+ 
+ ## description
 
-This app is created with HTML5 , CSS3 and vanilla javascirpt.
+ This app is created with HTML5 , CSS3 and vanilla javascirpt.
+ sudoku is one of the most popular logical game. As you know there are many many starategies to solve sudoku. 
+ In this time I just covered some of them, such as 
 
 
