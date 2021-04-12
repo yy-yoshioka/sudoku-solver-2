@@ -7,3 +7,7 @@
   <img src="https://img.shields.io/badge/license-MIT-blue.svg">
 </a>
  </p>
+
+This app is created with HTML5 , CSS3 and vanilla javascirpt.
+
+
