@@ -4,11 +4,12 @@ import {
 } from '../twoPairOptions/twoPairArray.js';
 
 import { concatArrays } from '../settings/arrays.js';
-
+let tempArr = [];
 let storeMainArr = [];
 const tempMain = async (mainArr) => {
-  const copyMainArr = [...mainArr];
-  const pairList = copyMainArr.filter((item) => item.options.length === 2);
+  console.log(tempArr);
+  const pairList = mainArr.filter((item) => item.options.length === 2);
+
   const boxAll = pairList
     .map((item) => item.options)
     .reduce(reducerOptions, {});
@@ -31,41 +32,23 @@ const tempMain = async (mainArr) => {
     newArr = getOptions;
   }
 
-  const putNumRes = putNum(pairList, newArr[0], newArr[0].options[0]);
+  // temporary put number
+  const copyArr = newArr[0];
+  const cop = { ...copyArr };
 
-  const historyRes = history(newArr[0], newArr[0].options[0]);
-  const log = historyRes[0];
-  const logHistory = historyRes[1];
-  const resArray = concatArrays(copyMainArr, putNumRes);
+  const number = copyArr.options[0];
 
-  return [resArray, log, copyMainArr, storeMainArr, logHistory];
-};
-
-const putNum = (arr, cell, number) => {
-  const copyArr = [...arr];
-  const copyObj = { ...cell };
-  const num = number;
-  copyObj.options = [];
-  copyObj.options.push(num);
-  const newArr = concatArrays(copyArr, copyObj);
-  return newArr;
-};
-
-let historyArr = [];
-const history = (cell, number) => {
-  let historyObj = {};
-  let copyCell = { ...cell };
-  let option = copyCell.options;
-  let index = option.indexOf(number);
-  option.splice(index, 1);
-  historyObj = {};
-  historyObj = {
-    cell,
-    number,
+  let tempObj = {};
+  tempObj = {
+    cell: cop,
+    tempNumber: number,
   };
-  historyArr = historyArr.concat(historyObj);
 
-  return [copyCell, historyArr];
+  tempArr.push(tempObj);
+  localStorage.setItem('temCellNum', JSON.stringify(tempArr));
+  copyArr.options = [number];
+  const resArray = concatArrays(mainArr, copyArr);
+  return resArray;
 };
 
-export { tempMain, history };
+export { tempMain };

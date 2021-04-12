@@ -30,12 +30,9 @@ import { tempMain } from './js/temporaryStorage/temporaryMain.js';
 import { reAssignNumMain } from './js/temporaryStorage/reAssignMain.js';
 import { errorCtrMain } from './js/errorController/errorCtr.js';
 
+let tempArr = [];
 const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
   let copyArr = [...cellArray];
-  let log;
-  let mainArr = [];
-  let storeMainArray = [];
-  let historyResult = [];
 
   for (let i = 0; i < 100; i++) {
     // console.log(+`${i}` + 1);
@@ -75,56 +72,26 @@ const main = async (cellArray, boxArray, rowArray, colArray, concatBox) => {
     if (errorCheck === 'error') {
       console.log('error');
 
-      const reAssignArr = reAssignNumMain(storeMainArray, historyResult);
-      const box5 = copyArr.filter((item) => item.box === 5);
-      console.log(box5);
+      const reAssignArr = reAssignNumMain(copyArr, tempArr);
+      fillNumbers(reAssignArr[0]);
 
-      const errorCheck2 = errorCtrMain(copyArr);
-      fillNumbers(copyArr);
-
-      break;
+      tempArr = reAssignArr[1];
+      copyArr = reAssignArr[0];
+      // break;
     } else if (errorCheck !== 'error' && countBegin === countEnd) {
       if (countEnd !== 81) {
         let leftNum = 81 - countEnd;
         if (leftNum !== 0) {
           console.log('temporary put number');
-          const cell64 = copyArr.filter(
-            (item) => item.box === 5 && item.row === 6 && item.col === 4
-          );
-
-          localStorage.setItem('data', JSON.stringify(copyArr));
-          // localStorage.setItem('data2', JSON.stringify(copyArr));
-
+          tempArr.push(copyArr);
+          // store data to Local Storage
+          localStorage.setItem('data', JSON.stringify(tempArr));
           const tempMainRes = await tempMain(copyArr);
-          log = tempMainRes[1];
-          mainArr = tempMainRes[2];
-          storeMainArray = tempMainRes[3];
-          historyResult = tempMainRes[4];
-
-          const getData = JSON.parse(window.localStorage.getItem('data'));
-
-          const box5 = copyArr.filter((item) => item.box === 5);
-          console.log(box5);
-
-          const dataBox5 = getData.filter((item) => item.box === 5);
-          console.log(dataBox5);
-
-          const newArr = box5.map((el) => {
-            const num = el.id;
-            let options = el.options;
-            const findCell = dataBox5.find((item) => item.id === `${num}`);
-            console.log(findCell);
-            el.options = findCell.options;
-            return el;
-          });
-
-          console.log(newArr);
-          const countNum = countNumber(tempMainRes[0]);
-          break;
+          const countNum = countNumber(tempMainRes);
           if (countEnd === countNum) {
             break;
           } else {
-            copyArr = tempMainRes[0];
+            copyArr = tempMainRes;
           }
         }
       } else {

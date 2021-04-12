@@ -79,12 +79,35 @@ const identicalRowCol1 = async () => {
 
 identicalRowCol1();
 
-console.log('hi');
+// console.log('hi');
 
-const num = [{ id: 1, number: 2, cell: { id: 1 } }];
+// local storage
+
+const num = [{ id: 1, number: 1, cell: { id: 1 } }];
+const num2 = [{ id: 2, number: 2, cell: { id: 2 } }];
+let number = [];
+number = number.concat(num);
+
+// console.log(number);
 let copyNum2 = Array.from(num);
 let copyNum = [...num];
 
-// localStorage.setItem('data', JSON.stringify(num));
+// store data
+
+// localStorage.setItem('num', JSON.stringify(number));
+// number = number.concat(num2);
+// localStorage.setItem('num', JSON.stringify(number));
+
+// get data
+
+// let getDataFromLs = JSON.parse(localStorage.getItem('num'));
+// console.log(getDataFromLs);
+
+// delete last data
+// let newData = getDataFromLs.pop();
+// console.log(getDataFromLs);
+// localStorage.setItem('num', JSON.stringify(getDataFromLs));
+
+// console.log(newData);
 
 num[0].id = 2;
